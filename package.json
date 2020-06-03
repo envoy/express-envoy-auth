@@ -1,6 +1,6 @@
 {
   "name": "@envoy/express-envoy-auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Middleware to authenticate an Express application with Envoy",
   "main": "./src",
   "homepage": "https://github.com/envoy/express-envoy-auth",

@@ -21,22 +21,23 @@ Returns an authentication middleware taking up (by default) the routes `/auth` a
 ```js
 app.use(
   envoyAuth({
-    // if specified, constructs OAuth and GraphQL URLs
+    // optional. if specified, constructs OAuth and GraphQL URLs
     // against this base host. Defaults to envoy.com
     host: "envoy.dev",
-    // if specified, mounts the routes off of the given path
+    // optional. if specified, mounts the routes off of the given path
     // eg. /envoy/auth, /envoy/auth/callback
     // defaults to ''
     prefix: "/envoy",
-    // your envoy client ID
+    // required. your envoy client ID
     clientID: ENVOY_CLIENT_ID,
-    // your envoy client secret
+    // required. your envoy client secret
     secret: ENVOY_SECRET,
-    // scopes to request on the user
+    // required. scopes to request on the user
     scopes: ["public"],
-    // redirect URL after OAuth 2.0 authorize
+    // optional. if specified, redirects to this URL after OAuth 2.0 authorize.
+    // Defaults to to <host>/auth/callback
     callback: "https://www.example.com/envoy/auth/callback",
-    // if specified, `afterAuth` is called when auth is
+    // optional. if specified, `afterAuth` is called when auth is
     // completed. middleware will redirect to "/" by
     // default
     afterAuth(req, res) {

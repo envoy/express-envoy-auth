@@ -23,7 +23,7 @@ module.exports = function createEnvoyAuth(app) {
 
     passport.use(
       new Strategy({
-        callbackURL: callback,
+        callbackURL: callback || `${prefix}/auth/callback`,
         clientID,
         clientSecret: secret,
         profileQuery,

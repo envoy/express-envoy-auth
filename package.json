@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "@envoy/passport-envoy": "^1.0.2",
-    "passport": "^0.4.1"
+    "passport": "^0.6.0"
   },
   "peerDependencies": {
     "express": "^4.17.1"
